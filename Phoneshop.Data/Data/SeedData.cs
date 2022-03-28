@@ -21,7 +21,7 @@ namespace Phoneshop.Data.Data
                 );
             modelBuilder.Entity<Phone>().Property(p => p.Price).HasConversion<decimal>();
             modelBuilder.Entity<Brand>().HasData(
-                new Brand { Id = 1, Name = "Motorola" },
+                new Brand { Id = 1, Name = "string" },
                 new Brand { Id = 2, Name = "Xiaomi" }
                 );
         }

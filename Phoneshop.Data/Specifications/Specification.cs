@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -42,6 +43,7 @@ namespace Phoneshop.Data.Specifications
         {
             var leftExpression = left.ToExpression();
             var rightExpression = right.ToExpression();
+            Debug.WriteLine(leftExpression.Body.ToString());
 
             var andExpression = Expression.AndAlso(leftExpression.Body, rightExpression.Body);
 

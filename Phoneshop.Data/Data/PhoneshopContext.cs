@@ -11,9 +11,10 @@ namespace Phoneshop.Data.Data
         }
         public DbSet<Phone> phones { get; set; }
         public DbSet<Brand> brands { get; set; }
+        public DbSet<Order> orders { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Phone>().HasOne(p => p.Brand).WithMany(b => b.Phones);
             modelBuilder.Seed();
         }
 

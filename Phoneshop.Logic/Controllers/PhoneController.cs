@@ -17,9 +17,12 @@ namespace Phoneshop.Logic.Controllers
         }
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public Phone Create(Phone phone)
+        public ObjectResult Create(Phone phone)
         {
-            return phoneService.Create(phone);
+            var result = phoneService.Create(phone);
+            if (result != null)
+                return Ok(result);
+            return BadRequest("something went wrong");
         }
 
         [HttpPut]
