@@ -30,7 +30,8 @@ namespace Phoneshop.Logic
                 .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAd"));
             services.AddDbContext<PhoneshopContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("phoneConnex")));
             services.AddScoped<IPhoneService, PhoneService>()
-                .AddScoped(typeof(IRepository<>), typeof(EFRepository<>));
+                .AddScoped(typeof(IRepository<>), typeof(EFRepository<>))
+                .AddScoped<IOrderService, OrderService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

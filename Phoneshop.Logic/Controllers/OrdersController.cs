@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Phoneshop.Data.Entities;
+using Phoneshop.Data.Interfaces;
 
 namespace Phoneshop.Logic.Controllers
 {
@@ -8,14 +9,17 @@ namespace Phoneshop.Logic.Controllers
     [ApiController]
     public class OrdersController : ControllerBase
     {
-        public OrdersController()
-        {
+        private readonly IOrderService order;
 
+        public OrdersController(IOrderService orderService)
+        {
+            this.order = orderService;
         }
         [HttpPost]
         public IActionResult Create(Order order)
         {
-            throw new System.NotImplementedException();
+            
+            return Ok(order);
         }
     }
 }

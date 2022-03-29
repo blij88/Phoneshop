@@ -61,6 +61,7 @@ namespace Phoneshop.Data.Services
                 phone.DiscountType = update.DiscountType;
                 phone.Discount = update.Discount;
                 phone.Description = update.Description;
+                phone.UpdateDateTime = System.DateTime.Now;
                 return ef.Update(phone);
             }
             return null;

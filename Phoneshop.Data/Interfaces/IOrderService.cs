@@ -10,7 +10,7 @@ namespace Phoneshop.Data.Interfaces
     public interface IOrderService
     {
         Order Create(Order order);
-        Order Delete(int id);
+        Order Delete(int id, reason reason);
         IEnumerable<Order> Get(bool deleted, DateTime from, DateTime to, int id);
     }
 }

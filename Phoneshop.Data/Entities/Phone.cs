@@ -27,6 +27,6 @@ namespace Phoneshop.Data.Entities
         public string Description { get; set; }
         public bool Deleted { get; set; } = false;
         public string Image { get; set; }
-        public IList<ProductsPerOrder> Products { get; set; }
+        public IList<ProductsPerOrder> ProductsPerOrders { get; set; }
     }
 }

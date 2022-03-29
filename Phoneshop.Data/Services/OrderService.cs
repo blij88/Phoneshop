@@ -23,20 +23,21 @@ namespace Phoneshop.Data.Services
             return repo.Create(order);
         }
 
-        public Order Delete(int id)
+        public Order Delete(int id, reason reason)
         {
             var spec = new OrderIdSpecification(id);
             var entity = repo.Get(spec);
             entity.Deleted = true;
+            entity.Reason = (int)reason;
             return repo.Update(entity);
         }
 
-        public IEnumerable<Order> Get(bool deleted, DateTime from, DateTime to, int id =0)
+        public IEnumerable<Order> Get(bool deleted, DateTime from, DateTime to, int id = -1)
         {
             Specification<Order> spec = new OrderDateSpecification(from, to);
             if (deleted)
                 spec = spec.And(new OrderDeletedSpecification());
-            if (id != 0)
+            if (id > 0)
             {
                 spec = spec.And(new UserIdOrderSpecification(id));
             }

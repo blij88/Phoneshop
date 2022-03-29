@@ -15,6 +15,17 @@ namespace Phoneshop.Data.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<ProductsPerOrder>()
+                .HasKey(pp => new { pp.OrderId, pp.PhoneId });
+            modelBuilder.Entity<ProductsPerOrder>()
+                .HasOne(pp => pp.Phone)
+                .WithMany(P => P.ProductsPerOrders)
+                .HasForeignKey(pp => pp.PhoneId);
+            modelBuilder.Entity<ProductsPerOrder>()
+                .HasOne(pp => pp.Order)
+                .WithMany(o => o.ProductsPerOrder)
+                .HasForeignKey(bc => bc.OrderId);
+
             modelBuilder.Seed();
         }
 
