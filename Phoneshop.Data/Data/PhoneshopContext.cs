@@ -26,6 +26,14 @@ namespace Phoneshop.Data.Data
                 .WithMany(o => o.ProductsPerOrder)
                 .HasForeignKey(bc => bc.OrderId);
 
+            modelBuilder.Entity<Phone>()
+                .HasOne(p => p.Brand)
+                .WithMany(b => b.Phones);
+
+            modelBuilder.Entity<Order>()
+                .HasOne(o => o.User)
+                .WithMany(u => u.Orders);
+
             modelBuilder.Seed();
         }
 

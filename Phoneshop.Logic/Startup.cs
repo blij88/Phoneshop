@@ -11,6 +11,7 @@ using Phoneshop.Data.Data;
 using Phoneshop.Data.Interfaces;
 using Phoneshop.Data.Repositories;
 using Phoneshop.Data.Services;
+using System.Text.Json.Serialization;
 
 namespace Phoneshop.Logic
 {

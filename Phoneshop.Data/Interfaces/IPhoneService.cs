@@ -10,7 +10,7 @@ namespace Phoneshop.Data.Interfaces
     public interface IPhoneService
     {
         Phone Create(Phone phone);
-        Phone Update(PhoneUpdate update);
+        Phone Update(Phone phone);
         Phone Delete(int id);
         Phone Action(int id, int type, double value);
     }

@@ -26,7 +26,7 @@ namespace Phoneshop.Data.Specifications.PhoneSpecifications
         }
         public override Expression<Func<Phone, bool>> ToExpression()
         {
-            return p => p.BrandId == brandId;
+            return  p => p.BrandId == brandId;
         }
     }
 

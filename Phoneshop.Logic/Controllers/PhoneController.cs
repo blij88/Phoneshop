@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Phoneshop.Data.Entities;
 using Phoneshop.Data.Interfaces;
 
@@ -17,30 +16,41 @@ namespace Phoneshop.Logic.Controllers
         }
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public ObjectResult Create(Phone phone)
+        public IActionResult Create(Phone phone)
         {
+            var type = phone.Type;
             var result = phoneService.Create(phone);
-            if (result != null)
+            if (result.Type == type)
                 return Ok(result);
-            return BadRequest("something went wrong");
+            return BadRequest(phone.Type);
         }
 
         [HttpPut]
-        public Phone Update(PhoneUpdate update)
+        public IActionResult Update(Phone update)
         {
-            return phoneService.Update(update);
+            var result = phoneService.Update(update);
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            return BadRequest("update could not be created");
         }
 
         [HttpPut("discount")]
-        public Phone discount(int id,int type, double value )
+        public IActionResult discount(int id, int type, double value)
         {
-            return phoneService.Action(id,type,value);
+            var result = phoneService.Action(id, type, value);
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            return BadRequest("discount could not be implemented");
         }
 
         [HttpDelete("{id}")]
-        public Phone Delete(int id)
+        public IActionResult Delete(int id)
         {
-           return phoneService.Delete(id);
+            return Ok(phoneService.Delete(id));
         }
     }
 }

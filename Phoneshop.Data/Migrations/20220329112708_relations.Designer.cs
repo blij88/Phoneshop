@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Phoneshop.Data.Data;
 
 namespace Phoneshop.Data.Migrations
 {
     [DbContext(typeof(PhoneshopContext))]
-    partial class PhoneshopContextModelSnapshot : ModelSnapshot
+    [Migration("20220329112708_relations")]
+    partial class relations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,14 +46,14 @@ namespace Phoneshop.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreateDateTime = new DateTime(2022, 3, 29, 13, 55, 49, 470, DateTimeKind.Local).AddTicks(6799),
+                            CreateDateTime = new DateTime(2022, 3, 29, 13, 27, 7, 801, DateTimeKind.Local).AddTicks(6899),
                             Name = "string",
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
-                            CreateDateTime = new DateTime(2022, 3, 29, 13, 55, 49, 470, DateTimeKind.Local).AddTicks(7409),
+                            CreateDateTime = new DateTime(2022, 3, 29, 13, 27, 7, 801, DateTimeKind.Local).AddTicks(7377),
                             Name = "Xiaomi",
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
@@ -183,7 +185,7 @@ namespace Phoneshop.Data.Migrations
                             Id = 1,
                             BrandId = 1,
                             Color = "blood",
-                            CreateDateTime = new DateTime(2022, 3, 29, 13, 55, 49, 463, DateTimeKind.Local).AddTicks(2265),
+                            CreateDateTime = new DateTime(2022, 3, 29, 13, 27, 7, 794, DateTimeKind.Local).AddTicks(4073),
                             Deleted = false,
                             Description = "testing",
                             Discount = 0.0,
@@ -197,7 +199,7 @@ namespace Phoneshop.Data.Migrations
                             Id = 2,
                             BrandId = 2,
                             Color = "blood",
-                            CreateDateTime = new DateTime(2022, 3, 29, 13, 55, 49, 467, DateTimeKind.Local).AddTicks(6488),
+                            CreateDateTime = new DateTime(2022, 3, 29, 13, 27, 7, 799, DateTimeKind.Local).AddTicks(555),
                             Deleted = false,
                             Description = "testing",
                             Discount = 0.0,
@@ -211,7 +213,7 @@ namespace Phoneshop.Data.Migrations
                             Id = 3,
                             BrandId = 1,
                             Color = "blood",
-                            CreateDateTime = new DateTime(2022, 3, 29, 13, 55, 49, 467, DateTimeKind.Local).AddTicks(6540),
+                            CreateDateTime = new DateTime(2022, 3, 29, 13, 27, 7, 799, DateTimeKind.Local).AddTicks(626),
                             Deleted = false,
                             Description = "testing",
                             Discount = 0.0,
@@ -225,7 +227,7 @@ namespace Phoneshop.Data.Migrations
                             Id = 4,
                             BrandId = 2,
                             Color = "blood",
-                            CreateDateTime = new DateTime(2022, 3, 29, 13, 55, 49, 467, DateTimeKind.Local).AddTicks(6548),
+                            CreateDateTime = new DateTime(2022, 3, 29, 13, 27, 7, 799, DateTimeKind.Local).AddTicks(631),
                             Deleted = false,
                             Description = "testing",
                             Discount = 0.0,
@@ -239,7 +241,7 @@ namespace Phoneshop.Data.Migrations
                             Id = 5,
                             BrandId = 1,
                             Color = "blood",
-                            CreateDateTime = new DateTime(2022, 3, 29, 13, 55, 49, 467, DateTimeKind.Local).AddTicks(6553),
+                            CreateDateTime = new DateTime(2022, 3, 29, 13, 27, 7, 799, DateTimeKind.Local).AddTicks(635),
                             Deleted = false,
                             Description = "testing",
                             Discount = 0.0,

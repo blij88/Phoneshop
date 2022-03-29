@@ -27,7 +27,7 @@ namespace Phoneshop.Data.Specifications.OrderSpecifications
 
         public override Expression<Func<Order, bool>> ToExpression()
         {
-            return o => o.CustomerId == id;
+            return o => o.User.Id == id;
         }
     }
 
